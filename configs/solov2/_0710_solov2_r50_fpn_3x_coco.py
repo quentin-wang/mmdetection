@@ -138,7 +138,7 @@ checkpoint_config = dict(interval=1)
 
 # data = dict(train=dict(pipeline=train_pipeline))
 data_root = 'datasets/invoice/'
-
+dataset_type = 'CocoDataset'
 data = dict(
     samples_per_gpu=2,
     workers_per_gpu=2,
