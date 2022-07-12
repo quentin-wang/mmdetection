@@ -133,7 +133,7 @@ test_pipeline = [
 ]
 
 # fp16 = dict(loss_scale=512.)
-evaluation = dict(interval=1, metric='segm', classwise=True) # evaluation = dict(interval=2, metric='segm', classwise=True, iou_thrs=[0.75])
+evaluation = dict(interval=1, metric='segm') , classwise=True) # evaluation = dict(interval=2, metric='segm', classwise=True, iou_thrs=[0.75])
 checkpoint_config = dict(interval=1)
 
 # data = dict(train=dict(pipeline=train_pipeline))
