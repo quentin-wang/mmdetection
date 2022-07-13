@@ -121,7 +121,7 @@ test_pipeline = [
     dict(
         type='MultiScaleFlipAug',
         # img_scale=(640, 640),
-        img_scale=(768, 768),
+        img_scale=(512, 512),
         flip=False,
         transforms=[
             # dict(type='Pad', size_ratio=0.1), # size_divisor=32),
