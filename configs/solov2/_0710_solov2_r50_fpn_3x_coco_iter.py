@@ -133,8 +133,8 @@ test_pipeline = [
 ]
 
 # fp16 = dict(loss_scale=512.)
-evaluation = dict(interval=100, metric='segm') #, classwise=True) # evaluation = dict(interval=2, metric='segm', classwise=True, iou_thrs=[0.75])
-checkpoint_config = dict(interval=100)
+evaluation = dict(interval=50, metric='segm') #, classwise=True) # evaluation = dict(interval=2, metric='segm', classwise=True, iou_thrs=[0.75])
+checkpoint_config = dict(interval=50)
 
 # data = dict(train=dict(pipeline=train_pipeline))
 data_root = 'datasets/invoice/'
