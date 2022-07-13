@@ -134,6 +134,9 @@ class MaskFeatModule(BaseModule):
         inputs = feats[self.start_level:self.end_level + 1]
         assert len(inputs) == (self.end_level - self.start_level + 1)
         feature_add_all_level = self.convs_all_levels[0](inputs[0])
+        if not self.training:
+            print("feature_add_all_level: ", feature_add_all_level.shape)
+
         for i in range(1, len(inputs)):
             input_p = inputs[i]
             if i == len(inputs) - 1:
