@@ -169,3 +169,4 @@ lr_config = dict(
     warmup_ratio=1.0 / 3,
     step=[27, 33])
 runner = dict(type='EpochBasedRunner', max_epochs=36)
+load_from = 'solov2_r50_fpn_3x_coco_20220512_125856-fed092d4.pth'

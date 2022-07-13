@@ -141,9 +141,8 @@ class MaskFeatModule(BaseModule):
                 coord_feat = generate_coordinate(input_p.size(),
                                                  input_p.device)
                 input_p = torch.cat([input_p, coord_feat], 1)
-
-            if not self.training:
-                print(feature_add_all_level.shape, self.convs_all_levels[i](input_p).shape)
+            # if not self.training:
+            #     print(feature_add_all_level.shape, self.convs_all_levels[i](input_p).shape)
             feature_add_all_level = feature_add_all_level + self.convs_all_levels[i](input_p)
 
         feature_pred = self.conv_pred(feature_add_all_level)
