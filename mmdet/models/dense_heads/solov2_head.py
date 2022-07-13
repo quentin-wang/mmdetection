@@ -134,8 +134,6 @@ class MaskFeatModule(BaseModule):
         inputs = feats[self.start_level:self.end_level + 1]
         assert len(inputs) == (self.end_level - self.start_level + 1)
         feature_add_all_level = self.convs_all_levels[0](inputs[0])
-        if not self.training:
-            print("feature_add_all_level: ", feature_add_all_level.shape)
 
         for i in range(1, len(inputs)):
             input_p = inputs[i]
@@ -145,7 +143,7 @@ class MaskFeatModule(BaseModule):
                 input_p = torch.cat([input_p, coord_feat], 1)
 
             if not self.training:
-                print(self.convs_all_levels[i](input_p).shape)
+                print(feature_add_all_level.shape, self.convs_all_levels[i](input_p).shape)
 
             feature_add_all_level += self.convs_all_levels[i](input_p)
 
